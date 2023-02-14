@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHORTEST JOB FIRST ALGORITHM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>THE SHORTEST JOB FIRST ALGORITHM</h2>
+
+    <div id="stripe">
+        <button type="button" onclick="openForm()" class = "openButton" id="add">Add Process</button>
+        <span id="message"></span>
+        <button type="button" class="btn1" id="btn1" >Forward Clock</button>
+        <button type="button">Auto</button>
+    </div>
+<br> <br>
+<div id="container">
+    <br>
+    <div class="square" id= "sqr">CPU</div>
+    <div class="formPopup" id="popupForm">
+        <form>  
+            <h2>Please Enter The Burst Time</h2>
+            <label for="Burst time">
+                <strong>Burst Time:</strong>
+            </label>
+            <input type="number" id="$BT" min="1" max="30" required>
+            <button type = "button" id="entry">Input entry</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            
+            </form> 
+            
+        </div>
+        <!-- Five buttons in a group -->
+        <div class="button-group" id="bts">
+            <button class= "button" type="button" id="p5"></button>
+            <button class= "button" type="button" id="p4"></button>
+            <button class= "button" type="button" id="p3"></button>
+            <button class= "button" type="button" id="p2"></button>
+            <button class= "button" type="button" id="$p1" ></button> 
+        </div>
+        
+        <br> <br> <br>
+    </div>
+    <hr>
+    <br>
+    <div>
+        <h3>HOW THIS ALGORITHM WORKS</h3>
+        <p>
+            Shortest Job First Algorithm is an algorithm in which the process having the smallest execution time is chosen for the next 
+            execution.  <br>
+            In the above program, there are 2 buttons ,1 button group ,and a square.
+            <ul>
+                <li>
+                    <dt>Add Process Button</dt>
+                     <dd>This button is used to prompt the user to input the burst times for the various processes.
+                         On clicking it, a pop up box will appear which consists of :
+                         <li>
+                            <dt>Input button label</dt>
+                             <dd>This is where the user will input values.The valies are restricted to numbers only and have a minimum of 1 and maximum of 30 for the purpose of simulation.</dd>
+                        </li>
+                        <li>
+                            <dt>Input Entry button</dt>
+                             <dd>On clicking this button,the inputted burst time will be moved to the empty right-most button in the button group.</dd>
+                        </li>
+                        <li>
+                            <dt>Close Button</dt>
+                             <dd>This button closes the pop up form.</dd>
+                        </li>
+                     </dd>
+                </li>
+                <br>
+                <li>
+                    <dt>Forward Clock Button</dt>
+                     <dd>This button is initialy hidden but after adding the burst time of atleast one process,it shows up.
+                         It performs two tasks:
+                         <li>
+                            <dt>Movement of the burst time </dt>
+                             <dd>The process with the smallest burst time will be moved from the queue to the CPU.</dd>
+                        </li>
+                        <li>
+                            <dt>Execution of processes in the CPU </dt>
+                             <dd>The CPU has 1 unit of time.Therefore,on clicking the forward clock button,it is simulated that each process will be executed by one unit of time hence reducing the burst time by one each time the button is clicked. </dd>
+                        </li>
+                     </dd>
+                </li>
+                <br>
+                <li>
+                        <dt>Button Group </dt>
+                         <dd>The button group is a simulation of a queue.There are 5 buttons in the group.
+                             The burst time values inputted in the pop up box are stored here.
+                         </dd>
+                </li>
+                <br>
+                <li>
+                    <dt> Square </dt>
+                     <dd>The square is a simulation of a Central Processing Unit(CPU).This is where processes are sent for execution.It has 1 unit of time.
+                         Processes which have finished execution are removed from the CPU and the next smallest process in the queue is moved to it after clicking the forward clock button.
+                     </dd>
+            </li>
+                
+            </ul> 
+        </p>
+    </div>
+
+ <script type="text/javascript" src="sjf.js"></script>
+
+
+</body>
+</html>                 

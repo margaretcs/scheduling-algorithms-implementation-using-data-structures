@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROUND ROBIN ALGORITHM</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+                 .info{
+    padding: 10px;
+    font-size: 30px;
+    margin: 10px;
+    }
+    #des{
+  color:black;
+}
+ a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+  float:left;
+}
+.round {
+  border-radius: 50%;
+}
+.a{
+  display: flex;
+  background-color: aquamarine;
+  justify-content: space-between;
+  align-items: center;
+}
+.b{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+  margin:0;
+  padding:0;
+  margin-top: 0;
+  width:0.000001px;
+  height:0.00001px;
+}
+.b li{
+  list-style: none;
+  margin-left: 10px;
+  display:inline-flex;
+  justify-content: space-between;
+}
+.b li a{
+  text-decoration: none;
+  color:grey;
+  padding: 5px 5px;
+  text-transform: uppercase;
+}
+.b li a:hover{
+  color: black;
+  background-color:white;
+}
+header{
+  display:flex;
+  background-color: aquamarine;
+  
+
+
+}
+.logo{
+    width: 75px;
+    height: 75px;
+    margin-right: 30px;
+}
+.nav-menu{
+  display: flex;
+}
+.a{
+  display:flex;
+  
+}
+
+.b{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blue;
+  background-color: aquamarine;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+#id{
+    margin: 0;
+  padding: 0;
+}
+    </style>
+</head>
+<body>
+    <h2>THE ROUND ROBIN ALGORITHM</h2>
+    <div id="stripe">
+        <div1>
+            <button type="button" onclick="openForm1()" class = "openButton" id="add1">Add Time slice</button>
+        </div1>
+        <button type="button" onclick="openForm()" class = "openButton" id="add">Add Process</button>
+        <span id="message"></span>
+        <button type="button" class="btn1" id="btn1" >Forward Clock</button>
+        <button type="button">Auto</button>
+    </div>
+<br> <br>
+<div id="container">
+    <br>
+    <div class="square" id= "sqr">CPU</div>
+    <div class="formPopup" id="popupForm">
+        <form>  
+            <h2>Please Enter The Burst Time</h2>
+            <label for="Burst time">
+                <strong>Burst Time:</strong>
+            </label>
+            <input type="number" id="$BT" min="1" max="30" required>
+            <button type = "button" id="entry">Input entry</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            
+            </form> 
+        </div>
+          
+        <div class="formPopup" id="popupForm1">
+
+            <form>  
+                <h2>Please Enter The Time Slice</h2>
+                <label for="Time slice">
+                    <strong>Time slice:</strong>
+                </label>
+                <input type="number" id="ts" min="1" max="30" required>
+                <button type = "button" id="entry1">Input Entry</button>
+                <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
+                
+                </form> 
+        </div>
+        <!-- Five buttons in a group -->
+        <div class="button-group" id="bts">
+            <button class= "button" type="button" id="p5"></button>
+            <button class= "button" type="button" id="p4"></button>
+            <button class= "button" type="button" id="p3"></button>
+            <button class= "button" type="button" id="p2"></button>
+            <button class= "button" type="button" id="$p1" ></button> 
+        </div>
+        
+    </div>
+
+    <div class="button1">
+        <button class= "button" type="button" id="p6"></button>
+
+    </div>
+    <hr>
+    <br>
+    <div class="info">
+        <h3>HOW THIS ALGORITHM WORKS</h3>
+        <p>
+            Round Robin Algorithm is one of the algorithms employed by process and network schedulers in computing.A round-robin scheduler generally employs time-sharing, 
+            giving each job a time slot or quantum (its allowance of CPU time), and interrupting the job if it is not completed by then. The job is resumed next time a
+            time slot is assigned to that process. If the process terminates or changes its state to waiting during its attributed time quantum, the scheduler selects the first process in the ready queue to execute. In the absence of time-sharing, or if the quanta were large relative to the sizes of the jobs, a process that produced large jobs would be favored over other processes.
+            <br>
+            In the above program, there are 4 buttons ,1 button group ,1 storage button and a square.
+            <ul>
+                <li>
+                    <dt>Add Process Button</dt>
+                     <dd>This button is used to prompt the user to input the burst times for the various processes.
+                         On clicking it, a pop up box will appear which consists of :
+                         <li>
+                            <dt>Input button label</dt>
+                             <dd>This is where the user will input values.The valies are restricted to numbers only and have a minimum of 1 and maximum of 30 for the purpose of simulation.</dd>
+                        </li>
+                        <li>
+                            <dt>Input Entry button</dt>
+                             <dd>On clicking this button,the inputted burst time will be moved to the empty right-most button in the button group.</dd>
+                        </li>
+                        <li>
+                            <dt>Close Button</dt>
+                             <dd>This button closes the pop up form.</dd>
+                        </li>
+                     </dd>
+                </li>
+                <br>
+                <li>
+                    <dt>Add Time Slice Button</dt>
+                     <dd>This button is used to prompt the user to input the quantum for the algorithm.
+                         On clicking it, a pop up box will appear which prompts the user to input the time slice.It also consists similar buttons to that of the Add Process button as mentioned above.
+                     </li>
+                <br>
+                <li>
+                    <dt>Forward Clock Button</dt>
+                     <dd>This button is initialy hidden but after adding the burst time of atleast one process,it shows up.
+                         It performs two tasks:
+                         <li>
+                            <dt>Movement of the burst time </dt>
+                             <dd>The first process to arrive will be moved from the queue to the CPU but will only be executed according to the time slice and returned to the queue if it has not finished execution.The first process in the ready queue will then be moved to the CPU and this cycle contiunues.</dd>
+                        </li>
+                        <li>
+                            <dt>Execution of processes in the CPU </dt>
+                             <dd>The CPU has 1 unit of time.Therefore,on clicking the forward clock button,it is simulated that each process will be executed by one unit of time hence reducing the burst time by one each time the button is clicked  until the time slice is exhausted. </dd>
+                        </li>
+                     </dd>
+                </li>
+                <br>
+                <li>
+                        <dt>Button Group </dt>
+                         <dd>The button group is a simulation of a queue.There are 5 buttons in the group.
+                             The burst time values inputted in the pop up box are stored here.
+                         </dd>
+                </li>
+                <br>
+                <li>
+                    <dt>Time Slice Storage Button </dt>
+                     <dd>
+                         The time slice values inputted in the pop up box after clicking input entry in the Add Time Slice button are stored here.
+                     </dd>
+            </li>
+            <br>
+                <li>
+                    <dt> Square </dt>
+                     <dd>The square is a simulation of a Central Processing Unit(CPU).This is where processes are sent for execution.It has 1 unit of time.
+                         Processes are executed according to the time slice provided.When a process is inputted,it takes the specified time slice period and then removed from the CPU.this cycle continues for each process untill all of them have been executed.
+                     </dd>
+            </li>
+                
+            </ul> 
+        </p>
+        <div class="info">
+            The above shows a visual representation of how the processes are scheduled into the CPU(Central Processing Unit) following the
+            Round Robin Sheduling Algorithm.  <br>It is clearly seen that the first process to arrive is also the first one to be
+         executed. However, the period it stays in the CPU is contolled by the time quantum. <br> If the first process is not able to 
+         complete the execution within the time quantum provided, an interrupt is generated which makes the process' execution to stop
+         before it is moved at the back of the queue. <br>
+         The scheduler selects another process from the ready queue and dispatches it to the processor for its execution. It is executed
+          until the time Quantum does not exceed.The same steps are repeated until all the process are finished.
+         Sometimes, processes are not stored adjacent to each other in the memory and an address is required to show the location
+         of the next process that should get into the CPU.<br>
+         Linked lists contain data and a link to the next member of the lists and thus it is a very important data structure that is used in scheduling of the processes.
+            <br> 
+                </div>
+                <div class='ll'>
+                    <div id='des'>
+                        <h1><u>IMPLEMENTATION USING A C PROGRAM</u></h1>
+                        #include &lt stdio.h &gt <br>
+ 
+                            int main() <br>
+                            { <br>
+                             
+                              int count,j,n,time,remain,flag = 0,time_quantum; <br>
+                              int wait_time=0,turnaround_time = 0,at[10],bt[10],rt[10]; <br>
+                              printf("Enter Number of Process:"); <br>
+                              scanf("%d",&n); <br>
+                              remain = n; <br>
+                              for(count = 0;count &lt n;count++) <br>
+                              { <br>
+                                printf("\n Enter Arrival Time for process %d :",count+1); <br>
+                                 scanf("%d",&at[count]); <br>
+                                printf("\nEnter Burst Time for Process %d :",count+1); <br>
+                                scanf("%d",&bt[count]); <br>
+                                rt[count] = bt[count]; <br>
+                              } <br>
+                              printf("\n Enter Time Quantum:"); <br>
+                              scanf("%d",&time_quantum); <br>
+                              printf("\n\t\t------------Grantt Chart--------------\n"); <br>
+                              printf("\n\t\t Process|Turnaround Time|Waiting Time\n\n"); <br>
+                              for(time = 0,count = 0;remain != 0;) <br>
+                              { <br>
+                                if(rt[count] &lt= time_quantum && rt[count] > 0) <br>
+                                { <br>
+                                  time += rt[count]; <br>
+                                  rt[count] = 0; <br>
+                                  flag = 1; <br>
+                                } <br>
+                                else if(rt[count] > 0) <br>
+                                { <br>
+                                  rt[count] -= time_quantum; <br>
+                                  time += time_quantum; <br>
+                                } <br>
+                                if(rt[count] == 0 && flag == 1) <br>
+                                { <br>
+                                  remain--; <br>
+                                  printf("\t\tP[%d]\t|\t%d\t|\t%d\n",count + 1, time-at[count], time-at[count]-bt[count]); <br>
+                                  wait_time += time-at[count]-bt[count]; <br>
+                                  turnaround_time += time-at[count]; <br>
+                                  flag = 0; <br>
+                                } <br>
+                                if(count == n-1) <br>
+                                  count=0; <br>
+                                else if(at[count+1] &lt= time) <br>
+                                  count++; <br>
+                                else <br>
+                                  count = 0; <br>
+                              } <br>
+                              printf("\n\t\tAverage Waiting Time= %f\n",wait_time*1.0/n); <br>
+                              printf("\n\t\tAvg Turnaround Time = %f\n",turnaround_time*1.0/n); <br>
+                              
+                              return 0; <br>
+                            } <br>
+                        </div>
+                        </div>
+                        <div class="info">
+                            After running the above program on a compiler, it will first ask you to enter the number of processes in the terminal. <br>
+                            You will then have to enter the arrival time and the burst time of each process. <br>
+                            Afterwards, it will output the Gantt Chart and then calculate the avarage time as well as the turn 
+                            around time of the processes. <br>
+                             <h3>Example:</h3>
+                             Suppose the number of processes entered is three <br>
+                             Arrival time of processes P1, P2, P3 is 0, 2 and 3 respectively.
+                             Burst time of processes P1, P2 and P3 is 4, 6 and 5 respectively. <br>
+                              The following will be the output. <br>
+                                      <img src="rr.png" alt="" >
+                            
+                            </div>
+                         <div>
+                            <a href="sjf.html" class="previous"> &laquo; Previous </a>
+
+
+                            <a href="#" class="previous round"> &#8249; </a>
+                         </div>
+
+ <script type="text/javascript" src="rr.js"></script>
+
+
+</body>
+</html>                 
